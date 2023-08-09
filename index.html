@@ -5,36 +5,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Tonk</title>
+    <script src="index.js" defer></script>
   </head>
   <body>
     <header>
       <nav>
         <ul class="socials">
-          <li><a href="https://github.com/RyanTF313"></a>Github</li>
-          <li><a href="https://www.linkedin.com/in/ryantf/"></a>LinkdIn</li>
-          <li>How to play</li>
+          <li><a href="https://github.com/RyanTF313">Github</a></li>
+          <li><a href="https://www.linkedin.com/in/ryantf/">LinkdIn</a></li>
+          <li class=".how-to-play">How to play</li>
         </ul>
       </nav>
     </header>
     <main>
       <h1>Tonk</h1>
-      <section class="message"></section>
+      <section>
+        <h2 id="game-id">Game ID:</h2>
+      </section>
+      <section id="message"></section>
       <button type="submit" id="start">start</button>
-      <section class="table">
-        <section class="hands"></section>
-        <section id="deck"></section>
-        <img
-          id="discard"
-          src="https://assetstools.cosentino.com/api/v1/bynder/color/SL6/tablahd/SL6-fullslab.jpg?w=1920&h=1080&fit=crop&auto=compress,format"
-          alt=""
-        />
-        <section class="hands">
-          <button type="submit" id="drawHand">Get Hand</button>
-          <ul id="hand"></ul>
+      <section id="table">
+
+        <section id="comp-hand">
+          <ul class="hand"></ul>
+        </section>
+
+        <section id="piles">
+          <section id="deck">Deck</section>
+          <section id="discard">
+            <img id="discardImg" src="./card-back-black.png" alt="" />
+            Discard
+          </section>
+        </section>
+
+        <section id="user-hand">
+          <ul class="hand"></ul>
         </section>
       </section>
     </main>
-    <footer></footer>
-    <script src="index.js"></script>
+    <!-- <footer></footer> -->
   </body>
 </html>

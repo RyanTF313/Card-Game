@@ -1,0 +1,78 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+header ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 24px;
+}
+nav {
+  width: 100%;
+}
+nav li {
+  list-style: none;
+}
+
+nav a {
+  color: black;
+  text-decoration: none;
+}
+main {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+li {
+  height: 150px;
+}
+section ul {
+  height: 150px;
+}
+#table {
+  background-color: green;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: stretch;
+  width: 50%;
+  min-width: 300px;
+  max-width: 600px;
+  height: 500px;
+}
+#piles {
+  display: flex;
+  flex-direction: row;
+  font-size: xx-large;
+}
+#deck,
+#discard {
+  width: 100px;
+  height: 150px;
+  border: 3px solid white;
+  margin: 8px auto;
+}
+.hand {
+  display: flex;
+  flex-direction: row;
+  max-width: 50px;
+  margin: 0;
+  padding: 0;
+}
+.hand img {
+  display: block;
+  height: 100%;
+}
+.card {
+  list-style: none;
+  width: 100%;
+}
+#discardImg {
+  display: none;
+  width: 100px;
+  height: 150px;
+}
