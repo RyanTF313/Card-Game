@@ -1,7 +1,7 @@
 const message = document.getElementById("message");
 const start = document.getElementById("start");
 const gameIdHeading = document.getElementById("game-id");
-const place = ["start", "draw", "discard", "next"];
+// const place = ["start", "draw", "discard", "next"];
 const over = false;
 let deck_id; // 'c4d2sumxr5xq' // get deck id from data fetch
 // const deal = `https://deckofcardsapi.com/api/deck/${deck_id}/pile/${player}/add/?cards=${hand}`
@@ -9,16 +9,20 @@ let deck_id; // 'c4d2sumxr5xq' // get deck id from data fetch
 // const discard = `https://deckofcardsapi.com/api/deck/${deck_id}/pile/discard/add/?cards=${card}`
 const userHand = [];
 const compHand = [];
-const userHandDom = [];
-const userCompDom = [];
+let userCards = [];
+let compCards = [];
 const user = document.querySelector("#user-hand ul");
 const comp = document.querySelector("#comp-hand ul");
+const deck = document.getElementById("deck");
+const turn = true;
 
 start.addEventListener("click", (e) => {
   e.preventDefault();
   // get a deck from api
   startGame();
-  // message.innerHTML += `<h3> ${user} </h3>`
+  message.innerText = "Let the games begin! User it's your turn";
+  deck.innerHTML =
+    "<img id='backOfDeckImg' src='./card-back-black.png' alt='deck' />";
 });
 
 let startGame = () => {
@@ -65,6 +69,7 @@ let createhands = (deck) => {
         .map(
           (card) => `<li class="card">
       <img src=${card.image} />
+      <input type="hidden" data-card-value="${card.value}" data-card-suit="${card.suit}" data-card-code="${card.code}"/>
       </li>`
         )
         .join("");
@@ -75,7 +80,9 @@ let createhands = (deck) => {
       </li>`
         )
         .join("");
-      console.log(userHand, compHand);
+      document
+        .querySelectorAll("#user-hand li")
+        .forEach((card) => card.addEventListener("click", selectCard));
     });
 };
 let shuffleDeck = (deck) => {
@@ -91,8 +98,8 @@ let shuffleDeck = (deck) => {
     });
 };
 
-let drawOneCard = (deck) => {
-  fetch(`https://deckofcardsapi.com/api/deck/${deck}/draw/?count=1`, {
+let drawOneCard = () => {
+  fetch(`https://deckofcardsapi.com/api/deck/${deck_id}/draw/?count=1`, {
     method: "get",
     headers: { "Content-Type": "application/json" },
   })
@@ -101,7 +108,8 @@ let drawOneCard = (deck) => {
     })
     .then((data) => {
       // start discard pile
-      startDiscard(data.deck_id, data.cards[0].code);
+    //   startDiscard(data.deck_id, data.cards[0].code);
+    console.log(data)
     });
 };
 // let startDiscard = (deck, cards) => {
@@ -154,3 +162,21 @@ let drawOneCard = (deck) => {
 //       // createHand(data.deck_id)
 //     });
 // };
+
+const selectCard = (e) => {
+  const img = e.target;
+  const dataFrmInput = e.target.parentNode.childNodes[3].dataset;
+
+  if (img.style.border === "") {
+    img.style.border = "3px solid blue";
+    userCards.push(dataFrmInput);
+  } else {
+    img.style.border = "";
+    userCards = [
+      ...userCards.filter(
+        (card) => card.cardCode !== dataFrmInput.cardCode
+      ),
+    ];
+  }
+  console.log(img, dataFrmInput, userCards);
+};

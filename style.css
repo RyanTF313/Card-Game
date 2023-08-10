@@ -59,7 +59,6 @@ section ul {
 .hand {
   display: flex;
   flex-direction: row;
-  max-width: 50px;
   margin: 0;
   padding: 0;
 }
@@ -71,8 +70,7 @@ section ul {
   list-style: none;
   width: 100%;
 }
-#discardImg {
-  display: none;
+#backOfDeckImg {
   width: 100px;
   height: 150px;
 }
