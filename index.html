@@ -18,30 +18,25 @@
       </nav>
     </header>
     <main>
-      <h1>Tonk</h1>
+      <h1>High-Low</h1>
       <section>
         <h2 id="game-id">Game ID:</h2>
       </section>
-      <section id="message"></section>
-      <button type="submit" id="start">start</button>
-      <section id="table">
-
-        <section id="comp-hand">
-          <ul class="hand"></ul>
-        </section>
-
-        <section id="piles">
-          <section id="deck">Deck</section>
-          <section id="discard">
-            Discard
-          </section>
-        </section>
-
-        <section id="user-hand">
-          <ul class="hand"></ul>
-        </section>
+      <section>
+        <p>Will you be the higher or lower card?</p>
+        <button type="submit" class="game-type">High</button>
+        <button type="submit" class="game-type">Low</button>
       </section>
+      <section>
+        <button type="submit" id="start">Deal</button>
+        <button type="submit" id="restart">Quit/Re-Deal</button>
+        <button type="submit" id="reveal">Reveal</button>
+      </section>
+      <section id="table">
+        <section id="user">User</section>
+        <section id="comp">Comp</section>
+      </section>
+      <section id="message"></section>
     </main>
-    <!-- <footer></footer> -->
   </body>
 </html>

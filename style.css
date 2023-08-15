@@ -27,50 +27,27 @@ main {
   align-items: center;
   gap: 12px;
 }
-li {
-  height: 150px;
-}
-section ul {
-  height: 150px;
+section {
+  display: flex;
 }
 #table {
   background-color: green;
   display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: stretch;
-  width: 50%;
-  min-width: 300px;
-  max-width: 600px;
+  min-width: 500px;
+  max-width: 750px;
   height: 500px;
 }
-#piles {
-  display: flex;
-  flex-direction: row;
-  font-size: xx-large;
-}
-#deck,
-#discard {
+#user,
+#comp {
   width: 100px;
   height: 150px;
   border: 3px solid white;
   margin: 8px auto;
 }
-.hand {
-  display: flex;
-  flex-direction: row;
-  margin: 0;
-  padding: 0;
-}
-.hand img {
-  display: block;
-  height: 100%;
-}
-.card {
-  list-style: none;
-  width: 100%;
-}
-#backOfDeckImg {
-  width: 100px;
-  height: 150px;
+
+.active {
+  background-color: lightblue;
 }
