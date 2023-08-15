@@ -4,6 +4,9 @@ After the cards are dealt you must reveal them to see who is the winner.
 If the game is high then highest card wins but if the game is low then the lowest card wins.
 The game goes for atleats 3 rounds with the winner being the one with the most rounds won.
 
+## Play it Here
+https://ryantf313.github.io/Card-Game/
+
 ## Installation
 - git clone
 - open index.js file
@@ -18,3 +21,4 @@ The game goes for atleats 3 rounds with the winner being the one with the most r
 - Make game best of 3,5, or 7
 - Show each winner of the round whiole game is going
 - Refactor to make code more DRY
+
