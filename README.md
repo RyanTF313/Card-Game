@@ -12,6 +12,7 @@ The game goes for atleats 3 rounds with the winner being the one with the most r
 - HTML
 - CSS
 - Javascript (OOP)
+- Deck of Cards API
 
 ## Future Goals
 - Make game best of 3,5, or 7
